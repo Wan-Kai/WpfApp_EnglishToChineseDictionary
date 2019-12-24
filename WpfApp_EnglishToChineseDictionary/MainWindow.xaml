@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp_EnglishToChineseDictionary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="English-Chinese Dictionary" Height="550" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="158*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/resource/greenBoy.jpg"/>
+        </Grid.Background>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="4" 
+                   Text="Dictionary" TextAlignment="Center" Margin="20"
+                   VerticalAlignment="Bottom" FontSize="32" FontFamily="Segoe UI Black"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Foreground="White"
+                   Text="User：" TextAlignment="Right"
+                   VerticalAlignment="Center" FontSize="20" FontFamily="Segoe UI Black"></TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="2" Height="27" 
+                 Name="txt_userName" FontSize="18"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="1" Foreground="White"
+                   Text="Password：" TextAlignment="Right" 
+                   VerticalAlignment="Center" FontSize="20" FontFamily="Segoe UI Black"/>
+        <PasswordBox  Grid.Row="2" Grid.Column="2" Height="27" 
+                 Name="txt_password" FontSize="18"/>
+
+        <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal" Margin="10,12,10,10" VerticalAlignment="Top">
+            <Button Content="登录" Width="70" Margin="20 0 0 0" Height="35"
+                    Name="btn_login" Click="btn_login_Click" Background="Transparent" Foreground="White" FontSize="18"/>
+        </StackPanel>
     </Grid>
 </Window>
